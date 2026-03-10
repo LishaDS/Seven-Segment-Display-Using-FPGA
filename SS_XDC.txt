@@ -1,0 +1,30 @@
+set_property PACKAGE_PIN V7[get_ports {gpio_io_o_0[7]}]
+set_property PACKAGE_PIN U7[get_ports {gpio_io_o_0[6]}]
+set_property PACKAGE_PIN V5[get_ports {gpio_io_o_0[5]}]
+set_property PACKAGE_PIN U5[get_ports {gpio_io_o_0[4]}]
+set_property PACKAGE_PIN V8[get_ports {gpio_io_o_0[3]}]
+set_property PACKAGE_PIN U8[get_ports {gpio_io_o_0[2]}]
+set_property PACKAGE_PIN W6[get_ports {gpio_io_o_0[1]}]
+set_property PACKAGE_PIN W7[get_ports {gpio_io_o_0[0]}]
+set_property IOSTANDARD LVCMOS33[get_ports{gpio_io_o_0[*]}]
+
+
+set_property PACKAGE_PIN W4[get_ports {gpio_io_o_1[3]}]
+set_property PACKAGE_PIN V4[get_ports {gpio_io_o_1[2]}]
+set_property PACKAGE_PIN U4[get_ports {gpio_io_o_1[1]}]
+set_property PACKAGE_PIN U2[get_ports {gpio_io_o_1[0]}]
+set_property IOSTANDARD LVCMOS33[get_ports{gpio_io_o_1[*]}]
+
+
+set_property PACKAGE_PIN W5[get_ports {sys_clk}]
+set_property IOSTANDARD LVCMOS[get_ports{sys_clk}]
+create_clock -name sys_clk -period 10.000[get_ports sys_clk]
+
+set_property PACKAGE_PIN U18[get_ports {reset}]
+set_property IOSTANDARD LVCMOS[get_ports{reset}]
+
+
+set_property PACKAGE_PIN B18[get_ports {rx_0}]
+set_property IOSTANDARD LVCMOS[get_ports{rx_0}]
+set_property PACKAGE_PIN A18[get_ports {tx_0}]
+set_property IOSTANDARD LVCMOS[get_ports{tx_0}]

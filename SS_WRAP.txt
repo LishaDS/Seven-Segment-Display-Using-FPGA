@@ -1,0 +1,31 @@
+`timescale 1 ps / 1 ps
+
+module design_5_wrapper
+   (gpio_io_o_0,
+    gpio_io_o_1,
+    reset,
+    rx_0,
+    sys_clock,
+    tx_0);
+  output [7:0]gpio_io_o_0;
+  output [3:0]gpio_io_o_1;
+  input reset;
+  input rx_0;
+  input sys_clock;
+  output tx_0;
+
+  wire [7:0]gpio_io_o_0;
+  wire [3:0]gpio_io_o_1;
+  wire reset;
+  wire rx_0;
+  wire sys_clock;
+  wire tx_0;
+
+  design_5 design_5_i
+       (.gpio_io_o_0(gpio_io_o_0),
+        .gpio_io_o_1(gpio_io_o_1),
+        .reset(reset),
+        .rx_0(rx_0),
+        .sys_clock(sys_clock),
+        .tx_0(tx_0));
+endmodule

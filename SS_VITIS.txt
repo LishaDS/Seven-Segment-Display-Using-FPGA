@@ -1,0 +1,31 @@
+#include "Xparameters.h"
+#include "Xgpio.h"
+#include "xil_types.h"
+#include "xil_printf.h"
+void delay(volatile u32 count)
+{
+	while(count--);
+}
+int main()
+{
+	XGpio seg_gpio;
+	XGpio an_gpio;
+	u8 seven_seg[10]={
+			0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90
+	};
+	XGpio_Initialize(&seg_gpio,XPAR_AXI_GPIO_0_DEVICE_ID);
+	XGpio_Initialize(&an_gpio,XPAR_AXI_GPIO_1_DEVICE_ID);
+	XGpio_SetDataDirection(&seg_gpio,1,0x00);
+	XGpio_SetDataDirection(&an_gpio,1,0x0E);
+	while(1)
+	{
+		for(int i=0;i<10;i++)
+		{
+			XGpio_DiscreteWrite(&seg_gpio,1,seven_seg[i]);
+			xil_printf("displaying i=%b");
+			delay(15000000);
+		}
+	}
+
+
+}
